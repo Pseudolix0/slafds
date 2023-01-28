@@ -13,10 +13,10 @@ local abmethod = 1
 local wlmethod = 2
 local isteleporting = false
 local gkey = math.random(-10000000, 10000000)
-local bcs = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/bconsole.lua",true))()
-local b64l = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/b64.lua",true))()
-local emojil = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/emojilib.lua",true))()
-local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/library.lua",true))()
+local bcs = loadstring(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/bconsole.lua",true))()
+local b64l = loadstring(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/b64.lua",true))()
+local emojil = loadstring(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/emojilib.lua",true))()
+local lib = loadstring(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/library.lua",true))()
 local valid = false
 
 if dbgmode then cv = cv .. "-dv" end
@@ -187,7 +187,7 @@ else
             return pcall(function() hasi(v, p) end)
         end
         local pgu = game.Players.LocalPlayer.PlayerGui
-        local oldText = game:GetService("Players").LocalPlayer.PlayerGui.InteractionGUI.Prompt.PlatformButton.KeyLabel.TextColor3
+        local oldText = HGetService("Players").LocalPlayer.PlayerGui.InteractionGUI.Prompt.PlatformButton.KeyLabel.TextColor3
         for i,v1 in pairs (pgu:children()) do
             if v1.Name ~= "Chat" and v1:IsA("ScreenGui") then
                 for i,v in pairs (v1:GetDescendants()) do
@@ -420,7 +420,7 @@ local emain = nil
 function confirm(x)
     if not _G.ForceConfirm and not x then return true end
     emain.Screengui.Enabled = false
-    local tlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/wally.lua", true))()
+    local tlib = loadstring(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/wally.lua", true))()
     tlib.options.underlinecolor = Color3.new(255,0,0)
     local w = tlib:CreateWindow("Confirmation")
     local confirmed = nil
@@ -2083,7 +2083,7 @@ opts2:Create(
     "Custom Bypass",
     function(input)
         local http = pcall(function()
-            custom = game:HttpGet(input,true)
+            custom = HttpGet(input,true)
         end)
         if not http then custom = nil end
     end,
@@ -4336,7 +4336,7 @@ oplr2:Create(
             end
         end
         if adding_walls then
-            local dumped = shuffle(dumpToTable(game:HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/autobuilds/SmallWall")))
+            local dumped = shuffle(dumpToTable(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/autobuilds/SmallWall")))
             local int = 0
             local int2 = {}
             local wsca = workspace.PlayerModels.ChildAdded:connect(function(va)
@@ -7740,7 +7740,7 @@ itms:Create(
         _G.CurrentRangeMyAss = tonumber(v)
         if not startedInteract and v ~= 11 then
             startedInteract = true
-            loadstring(game:HttpGet"https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/interaction.lua")()
+            loadstring(HttpGet"https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/interaction.lua")()
         end
     end,
     {
@@ -8866,7 +8866,7 @@ end,
 )
 local wipe_do = w7:CreateSection'Auto-Build Gray Base'
 local selected_basebuild = {"OddySonFerry", "OddySonFerry"}
-local options_table = game:HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/autobuilds/index",true):split("\n")
+local options_table = HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/autobuilds/index",true):split("\n")
 for i,v in pairs (options_table) do
     if #v == 0 then
         options_table[i] = nil
@@ -8900,7 +8900,7 @@ wipe_do:Create(
     "Button",
     "Auto-Build Selected Base",
     function(input)
-        local struct_table = shuffle(dumpToTable(game:HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/autobuilds/"..selected_basebuild[2],true)))
+        local struct_table = shuffle(dumpToTable(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/autobuilds/"..selected_basebuild[2],true)))
         notify("Copy Base", "By continuing to use this, you agree that you want to load "..selected_basebuild[1],10)
         local hours = 0
         local minutes = 0
