@@ -13,10 +13,6 @@ local abmethod = 1
 local wlmethod = 2
 local isteleporting = false
 local gkey = math.random(-10000000, 10000000)
-local bcs = loadstring(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/bconsole.lua",true))()
-local b64l = loadstring(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/b64.lua",true))()
-local emojil = loadstring(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/emojilib.lua",true))()
-local lib = loadstring(HttpGet("https://raw.githubusercontent.com/Peak7550/Bark-Source/main/Dependencies/library.lua",true))()
 local valid = false
 
 if dbgmode then cv = cv .. "-dv" end
